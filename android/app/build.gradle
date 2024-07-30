@@ -20,6 +20,10 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+def buildNumber = flutterVersionCode.toInteger()
+def(major, minor, patch) = flutterVersionName.tokenize('.')
+
+def calculateBuildVersion = major.toInteger() * 100000 + minor.toInteger() * 1000 + patch.toInteger() + buildNumber
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -50,7 +54,7 @@ android {
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
+        versionCode calculateBuildVersion.toInteger()
         versionName flutterVersionName
     }
 
