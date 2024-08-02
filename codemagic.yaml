@@ -21,11 +21,11 @@ workflows:
       - name: Build APK with Flutter
         script: |
           cd . && flutter build 
-        apk artifacts:
-    - build/**/outputs/**/*.apk
-    - build/**/outputs/**/*.aab
-    - build/**/outputs/**/mapping.txt
-    - flutter_drive.log
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
     publishing:
     email:
         recipients:
