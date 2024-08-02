@@ -21,6 +21,7 @@ class _DrawPageState extends State<DrawPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primary,
+      appBar: AppBar(title: const Text("CI/CD")),
       body: SingleChildScrollView(
         child: Stack(
           children: [
