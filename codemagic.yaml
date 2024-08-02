@@ -27,9 +27,9 @@ workflows:
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
     publishing:
-    email:
+      email:
         recipients:
-            - e.vilar95@gmail.com
+          - e.vilar95@gmail.com
         notify:
-            success: true
-            failure: false
+          success: true
+          failure: false
